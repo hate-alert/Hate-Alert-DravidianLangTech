@@ -41,7 +41,7 @@ We fine-tuned different state-of-the-art multilingual BERT models on the given d
 Convolution neural networks are able to capture neighbourhood information more effectively. One of the previous state-of-the-art model to detect hatespeech was CNN-GRU (Zhang et al., 2018), We propose a new ```BERT-CNN``` fusion classifier where we train a single classification head on the concatenated embeddings from different BERT and CNN models. BERT models were initialised with the fine-tuned weights in the former section and the weights were frozen.  The number of BERT models in a single fusion model was kept flexible with maximum number of models fixed to three,due to memory limitation. For the CNN part, weuse the 128-dim final layer embeddings from CNNmodels trained on skip-gram word vectors usingFastText (Bojanowski et al., 2017)10. FastText vec-tors worked the best among other word embeddingslike LASER (Artetxe and Schwenk, 2019). For the fusion classifier head, we use a feed-forward neural network having four layers with batch normalization (Ioffe and Szegedy, 2015) and dropout (Srivas-tava et al., 2014) on the final layer. The predictionswere generated from a softmax layer of dimension equal to the number of classes.
 
 Our pipeline is shown below
-![Transformer Architecture](https://github.com/Debjoy10/Hate-Alert-DravidianLangTech/blob/master/architecture.png)(https://github.com/kushal2000/Dravidian-Offensive-Language-Identification/blob/master/Transformer_Architecture.jpg)
+![Transformer Architecture](https://github.com/Debjoy10/Hate-Alert-DravidianLangTech/blob/master/architecture.png)
 
 
 ## Results  
@@ -91,19 +91,10 @@ Our Final Results on test dataset are given below
 Ensure the following directory structure:
 
 ```bash
-├── results/
-├── saved_models/
-├── data/
-|    ├── annotation
-|    ├── raw
-|    └── word embedding
-├── predictions/
-├── RUN_model.ipynb
+├── finetuning/
+├── Random_seed_ensemble/
+├── CNN_embeddings/
 ├── README.md
-├── path.py
-├── rank.py
-├── train_and_eval_functions.py
-├── utils.py
 └── LICENSE
 ```
 
