@@ -91,9 +91,10 @@ Our Final Results on test dataset are given below
 Ensure the following directory structure:
 
 ```bash
-├── finetuning/
+├── Finetuning/
 ├── Random_seed_ensemble/
 ├── CNN_embeddings/
+├── ML Models/ 
 ├── README.md
 └── LICENSE
 ```
