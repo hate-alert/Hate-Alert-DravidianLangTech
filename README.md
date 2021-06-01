@@ -7,6 +7,11 @@ This is official Github repository of team **hate-alert** which ranked 1st, 1st 
 Social media often acts as breeding grounds for different forms of offensive content. For low resource languages like Tamil, the situation is more complex due to the poor performance of multilingual or language-specific models and lack of proper benchmark datasets. Based on this shared task ```Offensive Language Identification in Dravidian Languages``` at EACL 2021, we present an exhaustive exploration of different transformer models, We also provide a genetic algorithm technique for ensembling different models. Our ensembled models trained separately for each language secured the 1st position in Tamil, the 2nd position in Kannada, and the 1st position in Malayalam sub-tasks.
 
 
+## Finetuned models now available on HuggingFace :hugs:
+1. [Tamil](https://huggingface.co/Hate-speech-CNERG/deoffxlmr-mono-tamil)
+2. [Kannada](https://huggingface.co/Hate-speech-CNERG/deoffxlmr-mono-kannada)
+3. [Malayalam](https://huggingface.co/Hate-speech-CNERG/deoffxlmr-mono-malyalam)
+
 ## Sections
 1. [System description paper](#system-description-paper)
 2. [Task Details](#task-details)
@@ -99,28 +104,22 @@ Ensure the following directory structure:
 └── LICENSE
 ```
 
-### File descriptions:  
-Supplementary files including data and trained models can be found [here](https://drive.google.com/drive/folders/1_wfQNsSYHAtbbrf6AXTLdA8JaFzRM3KF?usp=sharing).  
-
-- [baseline_model.py](baseline_model.py):  Uses a baseline that uses a term frequency model (tf.idf) to rank how likely table row sentences are to be a part of a given explanation. The performance of this baseline on the development partition is 0.255 MAP.  
-
-- [utils.py](utils.py):  contains basic utility functions involved in preprocessing and data in relevant format.  
-
-- [paths.py](paths.py):  returns paths of the train, validation and test dataset.  
-
-- [rank.py](rank.py):  contains function to perform tf.idf ranking and also using the recursive variant to simulate hops amongst graph nodes.  Also, has functions to rank the predicted explanations for each question.  
-
-- [train_and_eval_functions.py](train_and_eval_functions.py):  contains functions for training the model and evaluating the accuracy on the dataset.  
-
-- [RUN_model.ipynb](RUN_model.ipynb):  Invokes all of the above in an interactve format to show the resulting MAP.  
-
-### How to Run:
-- Make sure the directory structure is as shown in above.  
-- Download the following folders and put it in the directory: [saved models](https://drive.google.com/drive/folders/10-Udk-NZkjraPDwyMv316Up-wHVuPknD?usp=sharing), [results](https://drive.google.com/drive/folders/1T2jpRy6ahWoIZ5204fKJtuU6OXQZy6zb?usp=sharing), [predictions](https://drive.google.com/drive/folders/1o3N1Qa7Z2eT7LiWSmktKkXCRxCKIbLcg?usp=sharing), [data](https://drive.google.com/drive/folders/10TSLkeeYkMbcp8JSSLx8ChD-w8Ss_Ogs?usp=sharing).  
-- Instructions on how to run, and meaning of the functions have been given in this interative [notebook](RUN_model.ipynb).
-
-
-
+### Citations
+Please consider citing this project in your publications if it helps your research.
+```
+@inproceedings{saha-etal-2021-hate,
+    title = "Hate-Alert@{D}ravidian{L}ang{T}ech-{EACL}2021: Ensembling strategies for Transformer-based Offensive language Detection",
+    author = "Saha, Debjoy and Paharia, Naman and Chakraborty, Debajit and Saha, Punyajoy and Mukherjee, Animesh",
+    booktitle = "Proceedings of the First Workshop on Speech and Language Technologies for Dravidian Languages",
+    month = apr,
+    year = "2021",
+    address = "Kyiv",
+    publisher = "Association for Computational Linguistics",
+    url = "https://www.aclweb.org/anthology/2021.dravidianlangtech-1.38",
+    pages = "270--276",
+    abstract = "Social media often acts as breeding grounds for different forms of offensive content. For low resource languages like Tamil, the situation is more complex due to the poor performance of multilingual or language-specific models and lack of proper benchmark datasets. Based on this shared task {``}Offensive Language Identification in Dravidian Languages{''} at EACL 2021; we present an exhaustive exploration of different transformer models, We also provide a genetic algorithm technique for ensembling different models. Our ensembled models trained separately for each language secured the first position in Tamil, the second position in Kannada, and the first position in Malayalam sub-tasks. The models and codes are provided.",
+}
+```
 
 
 ## Acknowledgements    
